@@ -1,0 +1,16 @@
+<h1>Share a news</h1>
+<form [formGroup]="form1">
+    <div> Title: <input type="text" formControlName="title"></div>
+    <div>Photo: <input type="file" accept="image/*" #file></div>
+    <div>Description: <input type="text" formControlName="description" style="height: 200"></div>
+    <div>
+        Tags: <input type="text" formControlName="tags">
+        <button type="button" (click)="addHashtag()" >+</button>
+    </div>
+    <div *ngFor="let h of hashTags">
+        <button (click)="deleteHashTag(h)">{{h}}</button>
+    </div>
+    <br>
+    <button type="button" (click)="goBack()">Go back</button>
+    <button type="button" (click)="submit()">Test upload</button>
+</form>

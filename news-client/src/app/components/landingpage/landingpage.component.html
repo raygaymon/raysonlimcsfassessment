@@ -1,0 +1,17 @@
+<label for="time">Time</label>
+<select name="time" [(ngModel)]="duration" >
+    <option value="5" [ngValue]="5 * 60000">5 mins</option>
+    <option value="15" [ngValue]="15 * 60000">15 mins</option>
+    <option value="30" [ngValue]="30 * 60000">30 mins</option>
+    <option value="45" [ngValue]="45 * 60000">45 mins</option>
+    <option value="60" [ngValue]="60 * 60000">60 mins</option>
+</select>{{duration}}
+<button type="button" (click)="changeDuration()">Change duration</button>
+<br>
+<button type="button" (click)="postNews()">Post News</button>
+<h1>Top Tags</h1>
+<table>
+    <tr *ngFor="let t of tags">
+        <td>{{t.tag}} ({{t.count}})</td>
+    </tr>
+</table>
